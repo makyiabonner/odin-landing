@@ -14,11 +14,14 @@
     --font-weight-bold: 900;
     --font-weight-light: 200;
     --xl-font: 48px;
-    --lg-font: 36px;
+    --lg-font: clamp(10px,7vw,36px);
     --md-font: 24px;
     --sm-font: 18px;
     --font: "Roboto";
-    --container-padding: 1em 20vw;
+    --container-padding: 7em 20vw;
+    --sm-container-padding: 1.5em 20vw;
+    --sm-border-radius: 10px;
+    --md-border-radius: 15px;
 }
 body {
     display: flex;
@@ -29,16 +32,26 @@ header {
     background: var(--primary-dark);
 }
 .container,
+footer {
+    padding: var(--sm-container-padding);
+}
+.container,
 .hero,
 footer{
     display: flex;
     justify-content: space-between;
     background: var(--primary-dark);
-    padding: var(--container-padding);
     align-items: center;
 }
-header{
-    padding: 15px;
+.hero{
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.hero,
+main,
+.quote-section,
+.signup-section{
+    padding: var(--container-padding);
 }
 .left-nav h1{
     font-size: var(--md-font);
@@ -48,11 +61,6 @@ header{
     display: flex;
     gap: 15px;
     list-style-type: none;
-}
-.hero,
-.quote-section{
-    padding-top: 70px;
-    padding-bottom: 70px;
 }
 .left-hero {
     display: flex;
@@ -71,7 +79,8 @@ header{
 .right-hero {
     background: url(images/hero-img.webp);
     background-size: cover;
-    width: 500px;
+    background-position: center;
+    width: clamp(200px, 29vw, 500px);
     height: 250px;
 }
 .signup-card button,
@@ -81,8 +90,9 @@ header{
     font-size: var(--sm-font);
     font-weight: var(--font-weight-bold);
     padding: 8px 28px;
-    border-radius: 10px;
+    border-radius: var(--sm-border-radius);
     width: fit-content;
+    cursor: pointer;
 } 
 .left-hero button{
     border: none;
@@ -91,26 +101,101 @@ header{
     border: solid 3px var(--secondary-color);
 }
 .left-hero p,
-.right-nav li {
+.right-nav a {
     font-size: var(--sm-font);
     color: var(--secondary-color);
+    text-decoration: none;
 }
-
 .signup-card{
     background: var(--primary-light);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 main h1{
     font-size: var(--lg-font);
     font-weight: var(--font-weight-bold);
     color: var(--primary-dark);
+    text-align: center;
+}
+.cards-row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4em;
+    flex: 1;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+.card img{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border-radius: var(--md-border-radius);
+    border: 5px solid var(--primary-light);
+}
+.card span{
+    max-width: 190px;
 }
 .quote-section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     background: var(--secondary-color);
-    padding: var(--container-padding);
+}
+.quote-section div{
+    max-width: 800px;
 }
 .quote{
     font-size: var(--lg-font);
     font-style: italic;
     font-weight: var(--font-weight-light);
     color: #1f2937;
+    margin-bottom: 10px;
+}
+.quoter{
+    font-size: var(--md-font);
+    font-weight: var(--font-weight-bold);
+    width: 100%;
+    text-align: end;
+
+}
+.signup-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: clamp(16px, 5vh, 50px) clamp(30px,5vw, 100px);
+    border-radius: var(--md-border-radius);
+}
+.left-signup{
+    max-width: fit-content;
+}
+.left-signup h2{
+    margin-bottom: 8px;
+}
+.left-signup h2,
+.left-signup p{
+    color: var(--secondary-color);
+}
+footer {
+    justify-content: center;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .right-nav ul{
+        display: none;
+    }
 }
