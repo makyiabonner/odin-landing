@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#1f2937;
+    --secondary-color:#E5E7EB;
+    --ternary-color:#F9FAF8;
+    --lg-font: 36px;
+    --md-font: 24px;
+    --sm-font: 18px;
+    --font: Roboto;
+}
+
+hea
