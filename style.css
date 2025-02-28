@@ -7,13 +7,60 @@
 }
 
 :root{
-    --primary-color:#1f2937;
+    --primary-dark:#1f2937;
+    --primary-light: #3882F6;
     --secondary-color:#E5E7EB;
     --ternary-color:#F9FAF8;
+    --font-weight-bold: 900;
+    --xl-font: 48px;
     --lg-font: 36px;
     --md-font: 24px;
     --sm-font: 18px;
     --font: Roboto;
 }
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header,
+.hero,
+footer{
+    display: flex;
+    justify-content: space-around;
+    background: var(--primary-dark);
+}
+.hero h1{
+   font-size: var(--xl-font);
+   color: var(--ternary-color); 
+   font-weight: var(--big-font-wt);
+}
+.hero p,
+.nav li {
+    font-size: var(--sm-font);
+    color: var(--secondary-color);
+}
 
-hea
+.nav h1{
+    font-size: var(--md-font);
+    color: var(--ternary-color);
+}
+.signup-card,
+.signup-card button{
+    background: var(--primary-light);
+}
+main h1{
+    font-size: var(--lg-font);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-dark);
+}
+.quote-section{
+    background: var(--secondary-color);
+}
+.quote{
+    font-size: var(--lg-font);
+    font-style: italic;
+    font-weight: light;
+    color: #1f2937;
+
+}
