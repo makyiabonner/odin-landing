@@ -12,41 +12,91 @@
     --secondary-color:#E5E7EB;
     --ternary-color:#F9FAF8;
     --font-weight-bold: 900;
+    --font-weight-light: 200;
     --xl-font: 48px;
     --lg-font: 36px;
     --md-font: 24px;
     --sm-font: 18px;
-    --font: Roboto;
+    --font: "Roboto";
+    --container-padding: 1em 20vw;
 }
 body {
     display: flex;
     flex-direction: column;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font);
 }
-header,
+header {
+    background: var(--primary-dark);
+}
+.container,
 .hero,
 footer{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background: var(--primary-dark);
+    padding: var(--container-padding);
+    align-items: center;
 }
-.hero h1{
+header{
+    padding: 15px;
+}
+.left-nav h1{
+    font-size: var(--md-font);
+    color: var(--ternary-color);
+}
+.right-nav ul{
+    display: flex;
+    gap: 15px;
+    list-style-type: none;
+}
+.hero,
+.quote-section{
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.left-hero {
+    display: flex;
+    flex-direction: column;
+    max-width: 470px;
+}
+.left-hero h1{
    font-size: var(--xl-font);
    color: var(--ternary-color); 
-   font-weight: var(--big-font-wt);
+   font-weight: var(--font-weight-bold);
 }
-.hero p,
-.nav li {
+.left-hero p {
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+.right-hero {
+    background: url(images/hero-img.webp);
+    background-size: cover;
+    width: 500px;
+    height: 250px;
+}
+.signup-card button,
+.left-hero button {
+    background: var(--primary-light);
+    color: var(--ternary-color);
+    font-size: var(--sm-font);
+    font-weight: var(--font-weight-bold);
+    padding: 8px 28px;
+    border-radius: 10px;
+    width: fit-content;
+} 
+.left-hero button{
+    border: none;
+}
+.signup-card button{
+    border: solid 3px var(--secondary-color);
+}
+.left-hero p,
+.right-nav li {
     font-size: var(--sm-font);
     color: var(--secondary-color);
 }
 
-.nav h1{
-    font-size: var(--md-font);
-    color: var(--ternary-color);
-}
-.signup-card,
-.signup-card button{
+.signup-card{
     background: var(--primary-light);
 }
 main h1{
@@ -56,11 +106,11 @@ main h1{
 }
 .quote-section{
     background: var(--secondary-color);
+    padding: var(--container-padding);
 }
 .quote{
     font-size: var(--lg-font);
     font-style: italic;
-    font-weight: light;
+    font-weight: var(--font-weight-light);
     color: #1f2937;
-
 }
